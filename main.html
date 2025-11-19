@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chabla's Automobile Center — Auto Repair, Body, Tires</title>
+
+  <!-- Link to our stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ========== HEADER / NAV ==========
+       Keep it simple: logo (text for now) + anchor links that scroll to sections -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#hero" class="logo">Chabla's Automobile Center</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HERO ==========
+         Short headline and two clear actions for users -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <h1>Reliable Auto Repair in NYC</h1>
+        <p>Body & Collision • Engine & Transmission • Trucking & Tires</p>
+        <div class="cta-row">
+          <!-- tel: makes phones open the dialer -->
+          <a class="btn btn-primary" href="tel:+19175606309">Call Now</a>
+          <a class="btn btn-ghost" href="#contact">Get a Quote</a>
+          <button type="button" id="wa-hero-btn" class="btn btn-whatsapp">
+            <img src="assets/img/whatsapp.png" alt="" class="wa-icon">
+            WhatsApp Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Shop Highlight (Overlay Text + Image)-->
+     <section id="shop-highlight" class="section highlight">
+        <div class="container">
+            <div class="highlight-inner">
+                <div class="highlight-card">
+                    <h2>Family-Owned Auto Repair Shop</h2>
+                    <p>
+                        Serving NYC for over 7+ years with expert services in body repair, engine maintenance, and trucking solutions.
+                    </p>
+                    <ul class="highlight-list">
+                        <li>Body & collision repairs with color-matched paint</li>
+                        <li>Engine, transmission, and brake service</li>
+                        <li>Truck and tire work for personal + fleet vehicles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- ========== SERVICES ==========
+         Three clearly separated blocks for each area you mentioned -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+
+        <!-- Body & Collision (includes painting) -->
+        <article class="svc">
+          <h3>Body & Collision</h3>
+          <ul>
+            <li>Dent & scratch repair</li>
+            <li>Full body paint (color match)</li>
+            <li>Frame & alignment</li>
+            <li>Insurance claims support</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Get Body Repair Quote</a>
+        </article>
+
+        <!-- Engine / Mechanical / Transmission -->
+        <article class="svc alt">
+          <h3>Engine & Mechanical</h3>
+          <ul>
+            <li>Diagnostics & check engine light</li>
+            <li>Oil & fluid service</li>
+            <li>Brake service</li>
+            <li>Transmission repair/rebuild</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Schedule Engine Service</a>
+        </article>
+
+        <!-- Trucking repair + tires -->
+        <article class="svc">
+          <h3>Trucking & Tires</h3>
+          <ul>
+            <li>Tire replacement & balancing</li>
+            <li>Heavy-duty truck repair</li>
+            <li>Suspension & alignment</li>
+            <li>Fleet maintenance</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Book Truck Service</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ==========
+         Simple form + contact info block.
+         For now it does nothing on submit—we’ll wire a form service or serverless later. -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact Us</h2>
+          <form id="contact-form" method="POST">
+            <!-- Associate labels with inputs using for/id (accessibility) -->
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required placeholder="(xxx) xxx-xxxx" />
+
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+              <option value="">Select…</option>
+              <option>Body & Collision</option>
+              <option>Engine & Mechanical</option>
+              <option>Trucking & Tires</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us the issue or upload pics later."></textarea>
+
+            <button class="btn btn-primary" type="submit">Send</button>
+            <button type="button" id="wa-btn" class="btn btn-primary">
+                Message on WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <!-- Right-hand column: address, hours, and a map -->
+        <aside class="contact-info">
+          <h3>Visit / Hours</h3>
+          <p>
+            📍 54-21 48th St, Maspeth, NY<br/>
+            ⏰ Mon–Sat: 8:00 AM – 7:00 PM
+          </p>
+          <p>📞 <a href="tel:+19175606309">+1 (917) 560-6309</a></p>
+
+          <!-- Google Maps embed: replace src with your shop’s embed link later -->
+          <div class="map-embed">
+            <iframe
+              title="Map to Shop"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4482768136418!2d-73.9185466!3d40.7301606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f13ad42f6d7%3A0x3fae1841940636e1!2sChabla&#39;s%20Automobile%20Center%20LTD!5e0!3m2!1sen!2sus!4v1763159781846!5m2!1sen!2sus"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 Chabla's Automobile Center. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Link to our tiny JS (we’ll add behavior later) -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
